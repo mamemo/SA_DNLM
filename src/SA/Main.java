@@ -1,6 +1,6 @@
 package SA;
 
-import java.io.File;
+//import java.io.File;
 import java.io.IOException;
 //import java.lang.management.ManagementFactory;
 //import java.util.ArrayList;
@@ -49,29 +49,33 @@ public class Main {
 		String dirOriginal = absdir+"src/SA/utilities/images/original/";
 		String dirGt = absdir+"src/SA/utilities/images/groundtruth/";
 
-		File folder = new File(dirOriginal);
-		File[] listOfFiles = folder.listFiles();
+		//ORIGINALES
+		Mat imagen = imageHandler.leerImagenGrises(dirOriginal + "mcf-z-stacks-03212011_a13_s2_original.tif");
+		settings.addToOriginalImages(imagen);
+		
+		Mat imagen2 = imageHandler.leerImagenGrises(dirOriginal + "mcf-z-stacks-03212011_b02_s2_original.tif");
+		settings.addToOriginalImages(imagen2);
+		
+		Mat imagen3 = imageHandler.leerImagenGrises(dirOriginal + "mcf-z-stacks-03212011_b06_s1_original.tif");
+		settings.addToOriginalImages(imagen3);
+		
+		Mat imagen4 = imageHandler.leerImagenGrises(dirOriginal + "mcf-z-stacks-03212011_b15_s1_original.tif");
+		settings.addToOriginalImages(imagen4);
+		
+		//GT
+		Mat imagengt = imageHandler.leerImagenGrises(dirGt + "mcf-z-stacks-03212011_a13_s2.png");
+		settings.addToOriginalImages(imagengt);
+		
+		Mat imagen2gt = imageHandler.leerImagenGrises(dirGt + "mcf-z-stacks-03212011_b02_s2.png");
+		settings.addToOriginalImages(imagen2gt);
+		
+		Mat imagen3gt = imageHandler.leerImagenGrises(dirGt + "mcf-z-stacks-03212011_b06_s1.png");
+		settings.addToOriginalImages(imagen3gt);
+		
+		Mat imagen4gt = imageHandler.leerImagenGrises(dirGt + "mcf-z-stacks-03212011_b15_s1.png");
+		settings.addToOriginalImages(imagen4gt);
 
-		for (File file : listOfFiles) {
-			if (file.isFile()) {
-				System.out.println(dirOriginal + file.getName());
-				Mat imagen = imageHandler.leerImagenGrises(dirOriginal + file.getName());
-				settings.addToOriginalImages(imagen);
-			}
-		}
-
-		File folderGT = new File(dirGt);
-		File[] listOfFilesGT = folderGT.listFiles();
-
-		for (File file : listOfFilesGT) {
-			if (file.isFile()) {
-				System.out.println(dirOriginal + file.getName());
-				Mat imagen = imageHandler.leerImagenGrises(dirGt + file.getName());
-				settings.addToGroundtruthImages(imagen);
-			}
-		}
-
-
+		
 		settings.setTemperatura(1);
 		int repeticiones = 1;
 		repeticiones = Integer.parseInt(args[0]);
