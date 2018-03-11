@@ -19,13 +19,13 @@ import SA.utilities.images.ImageHandler;
  */
 public class Main {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(int[] args) throws IOException {
 		SASettings settings = new SASettings();
 		ImageHandler imageHandler = new ImageHandler();
 		SA sa = new SA(settings);
 
 		settings.setLowerW(1);
-		settings.setUpperW(21);
+		settings.setUpperW(31);
 		settings.setCambioW(30);
 
 		settings.setLowerWn(3);
@@ -40,8 +40,14 @@ public class Main {
 		settings.setUpperLambda(30);
 		settings.setCambioLambda(30);
 
-		String dirOriginal = "src/SA/utilities/images/original/";
-		String dirGt = "src/SA/utilities/images/groundtruth/";
+
+		String absdir = "";
+		if (!System.getProperty("os.name").toLowerCase().contains("windows")) {
+			absdir = "/home/jdnlm/DnlmTests/SA_DNLM/";
+		}
+		
+		String dirOriginal = absdir+"src/SA/utilities/images/original/";
+		String dirGt = absdir+"src/SA/utilities/images/groundtruth/";
 
 		File folder = new File(dirOriginal);
 		File[] listOfFiles = folder.listFiles();
@@ -64,17 +70,13 @@ public class Main {
 			}
 		}
 
-		String absdir = "";
-		if (!System.getProperty("os.name").toLowerCase().contains("windows")) {
-			absdir = "/home/jdnlm/DnlmTests/SA_DNLM/";
-		}
 
 		settings.setTemperatura(1);
-		settings.setRepeticionesSinEnfriar(3);
+		settings.setRepeticionesSinEnfriar(args[0]);
 		int cantidad_repeticiones = 50;
 		//settings.setEnfriamiento(Enfriamiento(settings.getTemperatura(), cantidad_repeticiones));
 		settings.setEnfriamiento(0.9099999999999999);
-		settings.setCorridas(10);
+		settings.setCorridas(1);
 		String nombre = "SA_" + String.valueOf(cantidad_repeticiones) + ".txt";
 		File f = new File(nombre);
 		f.createNewFile();

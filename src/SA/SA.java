@@ -46,12 +46,14 @@ public class SA {
 						if (mejor.getFitness() > mejorGlobal.getFitness())
 							mejorGlobal.copiar(mejor);
 					}
+					nuevaSolucion = null;
 				}
 
 				archivar("T: " + String.valueOf(T) + " Mejor: " + mejor.toString() + " Tiempo: "
 							+ LocalDateTime.now());
 				
 				T *= settings.getEnfriamiento();
+				System.gc();
 			}
 
 			archivar("Mejor Global: " + mejorGlobal.toString());
