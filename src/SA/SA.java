@@ -33,7 +33,7 @@ public class SA {
 			ParamIndividual mejorGlobal = new ParamIndividual(this.settings);
 			ParamIndividual mejor = new ParamIndividual(this.settings);
 			ParamIndividual nuevaSolucion;
-			fitEval.calcularFitness(settings, mejor, params);
+			mejor.setFitness(0.0);
 			double T = settings.getTemperatura();
 
 			while (T > 0.01) {
