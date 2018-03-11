@@ -25,7 +25,7 @@ public class Main {
 		SA sa = new SA(settings);
 
 		settings.setLowerW(1);
-		settings.setUpperW(31);
+		settings.setUpperW(21);
 		settings.setCambioW(30);
 
 		settings.setLowerWn(3);
