@@ -10,7 +10,7 @@ public class Pruebas{
 		//Comparar_Dice prueba2 = new Comparar_Dice();
 		//prueba2.correrPrueba();
 		Filtrar_Dice prueba = new Filtrar_Dice();
-		prueba.correrPrueba(17, 3, 277, 12.271619);
+		prueba.correrPrueba(15, 3, 112, 4.7291594);
 	}
 	
 }

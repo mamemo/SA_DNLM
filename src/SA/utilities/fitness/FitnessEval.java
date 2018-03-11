@@ -23,10 +23,12 @@ public class FitnessEval {
 			// calculate fitness score for every (image, ground_truth) pair
 			// provided
 			System.out.println(settings.getSampleCount());
+			double fit = 0.0;
 			for (int index = 0; index < settings.getSampleCount(); index++) {
-				System.out.println("Indice "+Integer.toString(index));
-				score += evaluate(p, settings.getOriginalImage(index), settings.getGroundtruthImage(index));
-				System.out.println(Double.toString(score));
+				System.out.print("Indice "+Integer.toString(index)+": ");
+				fit = evaluate(p, settings.getOriginalImage(index), settings.getGroundtruthImage(index));
+				System.out.println(Double.toString(fit));
+				score += fit;
 				
 			}
 			// calculate the mean score for the samples

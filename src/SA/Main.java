@@ -54,7 +54,7 @@ public class Main {
 
 		for (File file : listOfFiles) {
 			if (file.isFile()) {
-				
+				System.out.println(dirOriginal + file.getName());
 				Mat imagen = imageHandler.leerImagenGrises(dirOriginal + file.getName());
 				settings.addToOriginalImages(imagen);
 			}
@@ -65,6 +65,7 @@ public class Main {
 
 		for (File file : listOfFilesGT) {
 			if (file.isFile()) {
+				System.out.println(dirOriginal + file.getName());
 				Mat imagen = imageHandler.leerImagenGrises(dirGt + file.getName());
 				settings.addToGroundtruthImages(imagen);
 			}
