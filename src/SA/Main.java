@@ -72,15 +72,13 @@ public class Main {
 
 
 		settings.setTemperatura(1);
-		settings.setRepeticionesSinEnfriar(1);
-		int cantidad_repeticiones = 50;
+		int repeticiones = 1;
+		repeticiones = Integer.parseInt(args[0]);
+		settings.setRepeticionesSinEnfriar(repeticiones);
+		//int cantidad_repeticiones = 50;
 		//settings.setEnfriamiento(Enfriamiento(settings.getTemperatura(), cantidad_repeticiones));
 		settings.setEnfriamiento(0.9099999999999999);
 		settings.setCorridas(1);
-		String nombre = "SA_" + String.valueOf(cantidad_repeticiones) + ".txt";
-		File f = new File(nombre);
-		f.createNewFile();
-		settings.setNombreArchivo(nombre);
 
 		sa.runOptimization();
 	}
