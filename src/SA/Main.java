@@ -64,16 +64,16 @@ public class Main {
 		
 		//GT
 		Mat imagengt = imageHandler.leerImagenGrises(dirGt + "mcf-z-stacks-03212011_a13_s2.png");
-		settings.addToOriginalImages(imagengt);
+		settings.addToGroundtruthImages(imagengt);
 		
 		Mat imagen2gt = imageHandler.leerImagenGrises(dirGt + "mcf-z-stacks-03212011_b02_s2.png");
-		settings.addToOriginalImages(imagen2gt);
+		settings.addToGroundtruthImages(imagen2gt);
 		
 		Mat imagen3gt = imageHandler.leerImagenGrises(dirGt + "mcf-z-stacks-03212011_b06_s1.png");
-		settings.addToOriginalImages(imagen3gt);
+		settings.addToGroundtruthImages(imagen3gt);
 		
 		Mat imagen4gt = imageHandler.leerImagenGrises(dirGt + "mcf-z-stacks-03212011_b15_s1.png");
-		settings.addToOriginalImages(imagen4gt);
+		settings.addToGroundtruthImages(imagen4gt);
 
 		
 		settings.setTemperatura(1);
