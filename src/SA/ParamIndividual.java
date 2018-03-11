@@ -88,27 +88,27 @@ public class ParamIndividual implements Comparable<ParamIndividual> {
 	}
 	
 	
-	private int valorCercano(int cambio, int valor, int minimo, int maximo) {
-		int alteracion = getRandomIntegerBetween(-cambio, cambio);
-		while (alteracion == 0) {
-			alteracion = getRandomIntegerBetween(-cambio, cambio);
-		}
-		int nuevo_v = alteracion + valor;
-		nuevo_v = (nuevo_v < minimo) ? minimo : nuevo_v;
-		nuevo_v = (nuevo_v > maximo) ? maximo : nuevo_v;
-		return nuevo_v;
-	}
-
-	private float valorCercano(float cambio, float valor, float minimo, float maximo) {
-		float alteracion = getRandomFloatBetween(-cambio, cambio);
-		while (alteracion == 0.0) {
-			alteracion = getRandomFloatBetween(-cambio, cambio);
-		}
-		float nuevo_v = alteracion + valor;
-		nuevo_v = (nuevo_v < minimo) ? minimo : nuevo_v;
-		nuevo_v = (nuevo_v > maximo) ? maximo : nuevo_v;
-		return nuevo_v;
-	}
+//	private int valorCercano(int cambio, int valor, int minimo, int maximo) {
+//		int alteracion = getRandomIntegerBetween(-cambio, cambio);
+//		while (alteracion == 0) {
+//			alteracion = getRandomIntegerBetween(-cambio, cambio);
+//		}
+//		int nuevo_v = alteracion + valor;
+//		nuevo_v = (nuevo_v < minimo) ? minimo : nuevo_v;
+//		nuevo_v = (nuevo_v > maximo) ? maximo : nuevo_v;
+//		return nuevo_v;
+//	}
+//
+//	private float valorCercano(float cambio, float valor, float minimo, float maximo) {
+//		float alteracion = getRandomFloatBetween(-cambio, cambio);
+//		while (alteracion == 0.0) {
+//			alteracion = getRandomFloatBetween(-cambio, cambio);
+//		}
+//		float nuevo_v = alteracion + valor;
+//		nuevo_v = (nuevo_v < minimo) ? minimo : nuevo_v;
+//		nuevo_v = (nuevo_v > maximo) ? maximo : nuevo_v;
+//		return nuevo_v;
+//	}
 
 	private int getRandomIntegerBetween(int lower, int upper) {
 		return random.nextInt(upper - lower + 1) + lower;

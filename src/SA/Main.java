@@ -2,9 +2,9 @@ package SA;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.management.ManagementFactory;
-import java.util.ArrayList;
-import java.util.Arrays;
+//import java.lang.management.ManagementFactory;
+//import java.util.ArrayList;
+//import java.util.Arrays;
 
 import org.opencv.core.Mat;
 
@@ -19,7 +19,7 @@ import SA.utilities.images.ImageHandler;
  */
 public class Main {
 
-	public static void main(int[] args) throws IOException {
+	public static void main(String[] args) throws IOException {
 		SASettings settings = new SASettings();
 		ImageHandler imageHandler = new ImageHandler();
 		SA sa = new SA(settings);
@@ -72,7 +72,7 @@ public class Main {
 
 
 		settings.setTemperatura(1);
-		settings.setRepeticionesSinEnfriar(args[0]);
+		settings.setRepeticionesSinEnfriar(1);
 		int cantidad_repeticiones = 50;
 		//settings.setEnfriamiento(Enfriamiento(settings.getTemperatura(), cantidad_repeticiones));
 		settings.setEnfriamiento(0.9099999999999999);
@@ -85,19 +85,19 @@ public class Main {
 		sa.runOptimization();
 	}
 
-	private static double Enfriamiento(double T, int cantidad_deseada) {
-		int cont = 0;
-		double alpha = 0.99;
-		double temp;
-		while (cont != cantidad_deseada) {
-			temp = T;
-			cont = 0;
-			while (temp > 0.01) {
-				cont++;
-				temp *= alpha;
-			}
-			alpha -= 0.01;
-		}
-		return alpha + 0.01;
-	}
+//	private static double Enfriamiento(double T, int cantidad_deseada) {
+//		int cont = 0;
+//		double alpha = 0.99;
+//		double temp;
+//		while (cont != cantidad_deseada) {
+//			temp = T;
+//			cont = 0;
+//			while (temp > 0.01) {
+//				cont++;
+//				temp *= alpha;
+//			}
+//			alpha -= 0.01;
+//		}
+//		return alpha + 0.01;
+//	}
 }
