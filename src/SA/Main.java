@@ -82,7 +82,9 @@ public class Main {
 		settings.setRepeticionesSinEnfriar(repeticiones);
 		//int cantidad_repeticiones = 50;
 		//settings.setEnfriamiento(Enfriamiento(settings.getTemperatura(), cantidad_repeticiones));
-		settings.setEnfriamiento(0.9099999999999999);
+		double enfriamiento = 0.38999999999999946;
+		enfriamiento = Double.parseDouble(args[1]);
+		settings.setEnfriamiento(enfriamiento);
 		settings.setCorridas(1);
 
 		sa.runOptimization();

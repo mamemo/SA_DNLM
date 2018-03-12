@@ -24,6 +24,31 @@ public class Filtrar_Dataset{
 	    
 	}
 	
+	public void correrUna(int w, int w_n, int sigma_r, double lambda, String nombre){
+		String absdir = "src/SA/utilities/images/original/";
+	    ImageHandler imageHandler = new ImageHandler();
+
+	    Mat original = imageHandler.leerImagenGrises(absdir + nombre);
+		    // filter the image with DNLM-IDFT
+	    Mat imagenFiltrada = filtrar(original, w, w_n, sigma_r, lambda);
+		imageHandler.guardarImagen("C:/Users/mauro/Desktop/Imagenes Preprocesadas", 
+		 		nombre.substring(0, nombre.length() - 4)+"_DNLM", "png", imagenFiltrada);
+		System.out.println("Listo "+nombre);
+	    
+	}
+	
+	public void transformar(String nombre){
+		String absdir = "src/SA/utilities/images/original/";
+	    ImageHandler imageHandler = new ImageHandler();
+
+	    Mat original = imageHandler.leerImagenGrises(absdir + nombre);
+	    imageHandler.guardarImagen("C:/Users/mauro/Desktop/Imagenes Preprocesadas", 
+		 		nombre.substring(0, nombre.length() - 4)+"_original", "png",original);
+		System.out.println("Listo "+nombre);
+	    
+	}
+	
+	
 	private ArrayList<String> nombreImagenes(String ruta){
 		File folder = new File(ruta);
 	    File[] listOfFiles = folder.listFiles();

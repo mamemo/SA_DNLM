@@ -15,6 +15,5 @@ def soluciones_deseadas(T, cantidad_deseada):
         while(temp>0.01):
             cont+=1
             temp *= a
-        print(cont, a)
         a = a - 0.01
     return a + 0.01
